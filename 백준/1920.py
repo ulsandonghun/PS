@@ -6,7 +6,7 @@ lst = []
 lst=list(map(int,sys.stdin.readline().split()))
 
 dic={}
-for i in len(list):
+for i in range(len(lst)):
     dic[lst[i]]=i
 
 M = int(sys.stdin.readline())
