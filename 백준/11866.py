@@ -1,26 +1,19 @@
 import sys
 
 N , K = map(int,sys.stdin.readline().split())
-cnt=1;
-queue =[]
+cnt=0;
+
 result=[]
-for _ in range(1,N+1):
-    queue.append(_)
+queue=[i for i in range(1,N+1)]
 
 while(queue):
-    first=queue[0]
-    if(cnt%K==0):
-        queue.remove(first)
-        result.append(first)
-    else:
-        queue.remove(first)
-        queue.append(first)
-    cnt+=1
-print("<",end="")
-for _ in range(len(result)):
-    if(_<len(result)-1):
-        print(result[_],end="")
-        print(", ",end="")
-    else:
-        print(result[_],end="")
-print(">")
+    cnt+=K-1
+    #K-1 만큼 인덱스를 건너띄어서 큐에서 삭제
+    if cnt>=len(queue):
+        cnt%=len(queue)
+    result.append(str(queue.pop(cnt)))
+    #join을 써서 배열을 문자열로 바꾸기 위해 각 요소들을 문자 배열로 저장함.
+
+
+print("<",", ".join(result),">",sep="")
+
