@@ -14,7 +14,7 @@ list_nums.clear()
 M=int(sys.stdin.readline())
 list_nums=list(map(int,sys.stdin.readline().split()))
 
-print(" ".join(str(dict[i]) if i in dict else '0' for i in list_nums))
+print(" ".join(str(dict[i]) for i in list_nums if i in dict))
 
 
 
