@@ -1,20 +1,21 @@
 import sys
 
 N , M =map(int,sys.stdin.readline().split())
-dic=dict()
+dic_str_key=dict()
+dic_int_key=dict()
+
 i=1
 for _ in range(N):
-    dic[sys.stdin.readline().strip()]=str(i)
-    i+=1
+    input=sys.stdin.readline().strip()
 
-# print(dic)
+    dic_str_key[input]=str(_+1)
+    dic_int_key[str(_+1)]=input
+
 for j in range(M):
     word=sys.stdin.readline().strip()
-    if(word in dic):
-        print(dic[word])
+    if(word in dic_str_key):
+        print(dic_str_key[word])
     else:
-        for key, value in dic.items():
-            if(value==word):
-                print(key)
+        print(dic_int_key[word])
 
 
