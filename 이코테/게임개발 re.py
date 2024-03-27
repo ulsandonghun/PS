@@ -38,7 +38,6 @@ while (True):
         d[x][y] = 1
         cnt+=1
         turntime=0
-        continue
 
     else:
         turntime+=1
