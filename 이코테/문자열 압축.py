@@ -19,7 +19,7 @@ def solution(s):
             else:
                 compression+= str(count)+prev if count>=2 else prev
                 count=1
-                print(compression)
+                # print(compression)
 
                 prev=s[j:j+step]
     print(compression)
@@ -33,4 +33,4 @@ def solution(s):
 
 
 
-print(solution('aabbaccc'))
+print(solution('ababcdcdababcdcd'))
