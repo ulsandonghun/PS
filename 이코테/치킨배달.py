@@ -23,6 +23,7 @@ def combination(arr,n):
     if n==1:
         for i in arr:
             result.append([i])
+
         return result
     elif n>1:
         for i in range(len(arr)-n+1):
