@@ -1,23 +1,11 @@
 X = int(input())
 cnt=0
+dp=[0]*(X+1)
+dp[1]=0
+dp[2]=1
 
-while(True):
-    if (X == 1):
-        break
-    if((X%3)==0):
-        X/=3
-        cnt+=1
-        print(X)
-        continue
-    if(X%2==0):
-        X/=2
-        cnt+=1
-        print(X)
-        continue
-    X-=1
-    cnt+=1
-    print(X)
+for i in range(3,X+1):
+    dp[i]=min(dp[i-1]+1,dp[i//3]+1,dp[i//2]+1)
 
-print(cnt)
-
+print(dp[X])
 
